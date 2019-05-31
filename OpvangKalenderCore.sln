@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpvangKalenderCore.API", "OpvangKalenderCore.API\OpvangKalenderCore.API.csproj", "{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularSite", "AngularSite\", "{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61363"
+		Debug.AspNetCompiler.PhysicalPath = "AngularSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61363\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61363"
+		Release.AspNetCompiler.PhysicalPath = "AngularSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61363\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61363"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|x64.Build.0 = Release|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D70A681-305C-4C2C-BFB2-8DE5E4FF2AC5}.Release|x86.Build.0 = Release|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|x64.Build.0 = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Debug|x86.Build.0 = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|x64.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|x64.Build.0 = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|x86.ActiveCfg = Debug|Any CPU
+		{836A53F0-E77E-4180-84CF-AAE31A4B9E1E}.Release|x86.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4650FA11-3A50-4FF3-BF79-CFDF66CE5707}
+	EndGlobalSection
+EndGlobal
