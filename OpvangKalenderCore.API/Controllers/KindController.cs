@@ -11,7 +11,7 @@ using OpvangKalenderCore.API.Repositories;
 
 namespace OpvangKalenderCore.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Kinderen")]
     [ApiController]
     public class KindController : ControllerBase
     {
@@ -25,11 +25,9 @@ namespace OpvangKalenderCore.API.Controllers
         }
         // GET: api/Todo
         [HttpGet]
-        public IEnumerable<Kind> GetKinden()
+        public IEnumerable<Kind> GetKinderen()
         {
-            return  _repo.GetAll(new List<string> { "Locatie" , "Contacten", "OpvangMomenten", "Contacten.TypeContactGegeven",
-            "OpvangMomenten.KindOpvangMomenten",
-            "OpvangMomenten.KindOpvangMomenten.Kind"}).ToList();
+            return  _repo.GetAll().ToList();
         }
 
         // GET: api/Todo/5

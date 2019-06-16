@@ -1,27 +1,27 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmployeeAddComponent } from '../employee-add/employee-add.component';
-import { EmployeeDataService } from '../DataService/EmployeeDataService'
-import { Employee } from 'src/Models/Employee'
+import { KindAddComponent } from '../kind-add/kind-add.component';
+import { KindDataService } from '../DataService/KindDataService'
+import { Kind } from 'src/Models/Kind'
 import { Router } from '@angular/router';
-import { EmployeeupdateComponent } from '../employeeupdate/employeeupdate.component';
+import { KindUpdateComponent } from '../kind-update/kind-update.component';
 @Component({
-  selector: 'app-angular-crud',
-  templateUrl: './angular-crud.component.html',
-  styleUrls: ['./angular-crud.component.sass']
+  selector: 'app-kind',
+  templateUrl: './kind.component.html',
+  styleUrls: ['./kind.component.css']
 })
-export class AngularCRUDComponent implements OnInit {
+export class KindComponent implements OnInit {
 
-  emplist: Employee[];
+  emplist: Kind[];
   dataavailbale: Boolean = false;
-  tempemp: Employee
+  tempemp: Kind
 
-  constructor(private dataservce: EmployeeDataService, private route: Router) {
+  constructor(private dataservce: KindDataService, private route: Router) {
   }
   ngOnInit() {
     this.LoadData();
   }
   LoadData() {
-    this.dataservce.getEmployee().subscribe((tempdate) => {
+    this.dataservce.getKind().subscribe((tempdate) => {
       this.emplist = tempdate;
       console.log(this.emplist);
       if (this.emplist.length > 0) {
@@ -39,16 +39,16 @@ export class AngularCRUDComponent implements OnInit {
   deleteconfirmation(id: string) {
 
     if (confirm("Are you sure you want to delete this ?")) {
-      this.tempemp = new Employee();
+      this.tempemp = new Kind();
       this.tempemp.id = id;
-      this.dataservce.DeleteEmployee(this.tempemp).subscribe(res => {
+      this.dataservce.DeleteKind(this.tempemp).subscribe(res => {
         alert("Deleted successfully !!!");
         this.LoadData();
       })
     }
   }
-  @ViewChild('empadd') addcomponent: EmployeeAddComponent
-  @ViewChild('regForm') editcomponent: EmployeeupdateComponent
+  @ViewChild('empadd') addcomponent: KindAddComponent
+  @ViewChild('regForm') editcomponent: KindUpdateComponent
   loadAddnew() {
     this.addcomponent.objemp.email = ""
     this.addcomponent.objemp.firstname = ""
