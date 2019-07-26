@@ -12,7 +12,7 @@ export class KindAddComponent implements OnInit {
 
   @Input() cleardata: boolean = false;
   @Output() nameEvent = new EventEmitter<string>();
-objtempemp: Kind;
+objtempkind: Kind;
 @Input() objemp: Kind = new Kind();;
 @ViewChild('closeBtn') cb: ElementRef;
 constructor(private dataservice: KindDataService, private route: Router) {
@@ -29,14 +29,11 @@ ResetValues(){
 
 Register(regForm: NgForm){
 
-  this.objtempemp = new Kind();
-  this.objtempemp.email = regForm.value.email;
-  this.objtempemp.firstname = regForm.value.firstname;
-  this.objtempemp.lastname = regForm.value.lastname;
-  this.objtempemp.gender = regForm.value.gender;
+  this.objtempkind = new Kind();
+  this.objtempkind.naam = regForm.value.naam;
+  this.objtempkind.schoolgaand = regForm.value.schoolgaand;
 
-  this.dataservice.AddKind(this.objtempemp).subscribe(res => {
-    alert("Employee Added successfully");
+  this.dataservice.AddKind(this.objtempkind).subscribe(res => {
     this.TakeHome();
   }
 )
@@ -45,7 +42,7 @@ Register(regForm: NgForm){
 TakeHome(){
   this.nameEvent.emit("ccc");
   this.cb.nativeElement.click();
-  this.route.navigateByUrl('');
+  //this.route.navigateByUrl('');
 }
 
 }

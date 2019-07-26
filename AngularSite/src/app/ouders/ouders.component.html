@@ -1,6 +1,6 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Kinderen</h1>
+  <h1 class="h2">Ouders</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -30,7 +30,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of kindlist let i = index ">
+      <tr *ngFor="let e of ouderlist let i = index ">
         <td scope="col">{{e.id}}</td>
         <td scope="col">{{e.naam }}</td>
         <td scope="col">{{e.schoolGaand?'Ja':'Nee'}}</td>
@@ -58,7 +58,7 @@
         </div>
         <div class="modal-body">
 
-          <app-kind-add #empadd (nameEvent)="RefreshData($event)"></app-kind-add>
+          <app-ouder-add #empadd (nameEvent)="RefreshData($event)"></app-ouder-add>
 
         </div>
         <div class="modal-footer">
@@ -77,7 +77,7 @@
           <h4 class="modal-title">Edit</h4>
         </div>
         <div class="modal-body">
-          <app-kind-update (nameEvent)="RefreshData($event)" [isReset]="resetForm" #regForm></app-kind-update>
+          <app-ouder-update (nameEvent)="RefreshData($event)" [isReset]="resetForm" #regForm></app-ouder-update>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

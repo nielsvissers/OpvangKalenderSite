@@ -69,16 +69,25 @@ namespace OpvangKalenderCore.API.Controllers
         }
         // DELETE: api/Todo/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteKind(long id)
+        public async Task<IActionResult> DeleteKind(int id)
         {
-            var todoItem = await _context.Kind.FindAsync(id);
+            Kind TeVerwijderenKind = new Kind();
+            try
+            {
+                TeVerwijderenKind = await _context.Kind.FindAsync(id);
+            }
+            catch (Exception ex)
+            {
 
-            if (todoItem == null)
+                throw;
+            }
+
+            if (TeVerwijderenKind == null)
             {
                 return NotFound();
             }
 
-            _context.Kind.Remove(todoItem);
+            _context.Kind.Remove(TeVerwijderenKind);
             await _context.SaveChangesAsync();
 
             return NoContent();

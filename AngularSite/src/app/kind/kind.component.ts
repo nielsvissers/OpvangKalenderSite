@@ -11,9 +11,9 @@ import { KindUpdateComponent } from '../kind-update/kind-update.component';
 })
 export class KindComponent implements OnInit {
 
-  emplist: Kind[];
+  kindlist: Kind[];
   dataavailbale: Boolean = false;
-  tempemp: Kind
+  tempkind: Kind
 
   constructor(private dataservce: KindDataService, private route: Router) {
   }
@@ -22,9 +22,9 @@ export class KindComponent implements OnInit {
   }
   LoadData() {
     this.dataservce.getKind().subscribe((tempdate) => {
-      this.emplist = tempdate;
-      console.log(this.emplist);
-      if (this.emplist.length > 0) {
+      this.kindlist = tempdate;
+      console.log(this.kindlist);
+      if (this.kindlist.length > 0) {
         this.dataavailbale = true;
       }
       else {
@@ -36,12 +36,12 @@ export class KindComponent implements OnInit {
         console.log(err);
       }
   }
-  deleteconfirmation(id: string) {
+  deleteconfirmation(id: number) {
 
     if (confirm("Are you sure you want to delete this ?")) {
-      this.tempemp = new Kind();
-      this.tempemp.id = id;
-      this.dataservce.DeleteKind(this.tempemp).subscribe(res => {
+      this.tempkind = new Kind();
+      this.tempkind.id = id;
+      this.dataservce.DeleteKind(this.tempkind).subscribe(res => {
         alert("Deleted successfully !!!");
         this.LoadData();
       })
@@ -50,19 +50,14 @@ export class KindComponent implements OnInit {
   @ViewChild('empadd') addcomponent: KindAddComponent
   @ViewChild('regForm') editcomponent: KindUpdateComponent
   loadAddnew() {
-    this.addcomponent.objemp.email = ""
-    this.addcomponent.objemp.firstname = ""
-    this.addcomponent.objemp.lastname = ""
-    this.addcomponent.objemp.id = ""
-    this.addcomponent.objemp.gender = 0
+    this.addcomponent.objemp.naam = ""
+    this.addcomponent.objemp.schoolgaand = false
+    this.addcomponent.objemp.id = 0
   }
-  loadnewForm(id: string, email: string, firstname: string, lastname: string, gender: number) {
-    console.log(gender);
-    this.editcomponent.objemp.email = email
-    this.editcomponent.objemp.firstname = firstname
-    this.editcomponent.objemp.lastname = lastname
+  loadnewForm(id: number, naam: string, schoolgaand: boolean) {
+    this.editcomponent.objemp.naam = naam
+    this.editcomponent.objemp.schoolgaand = schoolgaand
     this.editcomponent.objemp.id = id
-    this.editcomponent.objemp.gender = gender
   }
   RefreshData() {
     this.LoadData();

@@ -1,47 +1,47 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';  
 import { Injectable } from '@angular/core';  
-import { Kind } from 'src/Models/Kind'  
+import { Ouder } from 'src/Models/Ouder'  
 import { ROOT_URL } from 'src/Models/Config'  
 import { Observable } from 'rxjs';  
 @Injectable()  
-export class KindDataService {  
-  employees: Observable<Kind[]>;  
-  newemployee: Kind;  
+export class OuderDataService {  
+  employees: Observable<Ouder[]>;  
+  newemployee: Ouder;  
   constructor(private http: HttpClient) {  
   
   }  
   
-  getKind() {  
-    return this.http.get<Kind[]>(ROOT_URL + 'kinderen');  
+  getOuder() {  
+    return this.http.get<Ouder[]>(ROOT_URL + 'ouders');  
   }  
-  AddKind(emp: Kind) {  
+  AddOuder(emp: Ouder) {  
   
     const headers = new HttpHeaders().set('Content-Type', 'application/json');  
     var body = {
       Naam: emp.naam, Schoolgaand: emp.schoolgaand
     }
-    return this.http.post<Kind>(ROOT_URL + 'kinderen', body, { headers });  
+    return this.http.post<Ouder>(ROOT_URL + 'ouders', body, { headers });  
   
   }  
   
   ///  
-  EditKind(emp: Kind) {  
+  EditOuder(emp: Ouder) {  
     console.log(emp);  
     const params = new HttpParams().set('ID', emp.id.toString());  
     const headers = new HttpHeaders().set('content-type', 'application/json');  
     var body = {
       Naam: emp.naam, Schoolgaand: emp.schoolgaand, ID: emp.id  
     }  
-    return this.http.put<Kind>(ROOT_URL + 'Kinderen/' + emp.id, body, { headers, params })  
+    return this.http.put<Ouder>(ROOT_URL + 'ouders/' + emp.id, body, { headers, params })  
   
   }  
-  DeleteKind(emp: Kind) {  
+  DeleteOuder(emp: Ouder) {  
     const params = new HttpParams().set('ID', emp.id.toString());  
     const headers = new HttpHeaders().set('Content-Type', 'application/json');  
     var body = {  
       Naam: emp.naam, Schoolgaand: emp.schoolgaand, ID: emp.id  
     }  
-    return this.http.delete<Kind>(ROOT_URL + 'kinderen/' + emp.id)  
+    return this.http.delete<Ouder>(ROOT_URL + 'ouders/' + emp.id)  
   
   }  
   

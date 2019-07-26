@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, Input, EventEmitter, Output, ElementRef } from '@angular/core';
-import { KindDataService } from '../DataService/KindDataService';
+import { OudersDataService } from '../DataService/OudersDataService';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Kind } from 'src/Models/Kind';
+import { Ouder } from 'src/Models/Ouder';
 @Component({
   selector: 'app-kind-update',
   templateUrl: './kind-update.component.html',
@@ -32,5 +32,5 @@ export class KindUpdateComponent implements OnInit {
       this.cb.nativeElement.click();
 
     });
-}
+  }
 }

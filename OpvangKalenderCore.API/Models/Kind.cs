@@ -11,5 +11,6 @@ namespace OpvangKalenderCore.API.Models
         [DefaultValue(false)]
         public bool SchoolGaand { get; set; }
         public List<KindOpvangMoment> KindOpvangMomenten { get; set; }
+        public List<KindOuder> Ouders { get; set; }
     }
 }
