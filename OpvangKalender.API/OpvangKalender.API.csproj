@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpvangKalender.LoggerService\OpvangKalender.LoggerService.csproj" />
+    <ProjectReference Include="..\OpvangKalenderModel\OpvangKalender.Model.csproj" />
+    <ProjectReference Include="..\OpvangKalenderRepo\OpvangKalender.Repo.csproj" />
+  </ItemGroup>
+
+</Project>
