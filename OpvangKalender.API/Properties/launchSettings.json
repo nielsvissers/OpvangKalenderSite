@@ -1,29 +1,8 @@
-﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
-    "iisExpress": {
-      "applicationUrl": "http://localhost:5000",
-      "sslPort": 0
-    }
-  },
+{
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": false
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "OpvangKalender.API": {
+    "Start": {
       "commandName": "Project",
-      "launchBrowser": false,
-      "launchUrl": "api/values",
-      "applicationUrl": "http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "ErrorString": "After parsing a value an unexpected character was encountered: \". Path 'profiles['IIS Express'].launchBrowser', line 15, position 6."
     }
   }
 }

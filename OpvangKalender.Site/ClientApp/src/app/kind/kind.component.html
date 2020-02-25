@@ -1,0 +1,89 @@
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Kinderen</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <span data-feather="calendar"></span>
+      This week
+    </button>
+  </div>
+</div>
+<div class="container">
+  <input type="button" class="btn btn-primary" (click)="loadAddnew()" data-toggle="modal" data-target="#myModal" value="Create New">
+  <hr>
+  <div *ngIf="!dataavailbale">
+
+    <h4> No Employee Data is present Click Add new to add Data.</h4>
+  </div>
+
+  <table class="table" *ngIf="dataavailbale">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Naam</th>
+        <th scope="col">Schoolgaand</th>
+        <th scope="col" style="align-content: center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of kindlist let i = index ">
+        <td scope="col">{{e.id}}</td>
+        <td scope="col">{{e.naam }}</td>
+        <td scope="col">{{e.schoolGaand?'Ja':'Nee'}}</td>
+        <td scope="col">
+          <button type="button" class="btn btn-default btn-primary" (click)="loadnewForm(e.id,e.email,e.fname,e.lname,e.gender)"
+                  data-toggle="modal" data-target="#myModaledit">
+            <span class="glyphicon glyphicon-edit"></span> Edit
+          </button>
+          |
+          <button type="button" class="btn btn-default btn-danger" (click)="deleteconfirmation(e.id)">
+            <span class="glyphicon glyphicon-trash"></span> Delete
+          </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-primary">Employee Add</h4>
+        </div>
+        <div class="modal-body">
+
+          <app-kind-add #empadd (nameEvent)="RefreshData($event)"></app-kind-add>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" #closeBtn class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="myModaledit" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Edit</h4>
+        </div>
+        <div class="modal-body">
+          <app-kind-update (nameEvent)="RefreshData($event)" [isReset]="resetForm" #regForm></app-kind-update>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
